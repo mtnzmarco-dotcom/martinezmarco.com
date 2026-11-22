@@ -19,6 +19,12 @@
 <meta name="twitter:title" content="Álvaro Martínez-Marco" />
 <meta name="twitter:description" content="Wellbeing, technology and design belong closer together." />
 <meta name="twitter:image" content="https://martinezmarco.com/og-image.png" />
+<script>
+document.addEventListener('error', function (e) {
+  var t = e.target;
+  if (t && t.tagName === 'IMG' && /\.jpg$/.test(t.src)) t.src = t.src.replace(/\.jpg$/, '.svg');
+}, true);
+</script>
 <link rel="stylesheet" href="/main.css" />
 </head>
 <body><div id="root"></div><script type="module" src="/main.js"></script></body>
