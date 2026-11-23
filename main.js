@@ -127,3 +127,7 @@ react-router-dom/dist/index.mjs:
    * @license MIT
    *)
 */
+
+
+/* Full Story close: repeat Home manifesto + contact CTA at the end of /story */
+;function x9(e){let t=as[e.lang],[a,o]=Uh("bmseu"),i=t.nodes[a];return Bh(()=>{document.getElementById("wv2-map")?.scrollIntoView()},[]),Be("main",{children:[te("p",{className:"wv2-back",children:Be(Ei,{to:"/",className:"wv2-navlink",children:["\u2190 ",t.backHome]})}),Be("section",{className:"wv2-section",id:"wv2-map",children:[te(Jr,{children:t.pathLabel}),te("p",{className:"wv2-sub wv2-hint",children:t.pathHint}),Be("div",{className:"wv2-path",children:[te(V4,{lang:e.lang,selected:a,onSelect:o,ariaLabel:t.pathLabel}),Be("div",{className:"wv2-detail","aria-live":"polite",children:[te("h3",{className:"wv2-detail-t",children:k9(e.lang,a)}),te("p",{className:"wv2-detail-sub",children:i.sub}),te("p",{className:"wv2-detail-x",children:i.text}),i.linkLabel?te("p",{className:"wv2-rowlinks",children:te("a",{href:
