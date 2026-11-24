@@ -26,6 +26,25 @@ document.addEventListener('error', function (e) {
 }, true);
 </script>
 <link rel="stylesheet" href="/main.css?v=20261124" />
+<style>
+.wv2-top{padding-bottom:16px}
+.wv2-mark{width:30px;height:18px}
+.wv2-nav{gap:22px}
+.wv2-navlink,.wv2-navcta{font-size:12px;letter-spacing:.02em;text-transform:none;color:#6b6b6b;border:0;border-bottom:1px solid transparent;border-radius:0;padding:4px 0;background:none}
+.wv2-navlink:hover,.wv2-navcta:hover{color:#111;background:none}
+.wv2-navlink.wv2-here,.wv2-navcta.wv2-here{color:#111;border-bottom-color:#ff4d00}
+.wv2-lang{font-size:11px;letter-spacing:.02em;color:#b5b5b5}
+.wv2-langb{color:#b5b5b5}
+.wv2-lang-on{color:#6b6b6b;border-bottom:1px solid #ccc}
+.wv2-langsep{color:#e2e2e2}
+</style>
+<script>
+(function(){
+function mark(){var p=location.pathname.replace(/\/+$/,'')||'/';var a=document.querySelectorAll('.wv2-navlink');for(var i=0;i<a.length;i++){var h=(a[i].getAttribute('href')||'/').replace(/\/+$/,'')||'/';var on=h==='/'?p==='/':(p===h||p.indexOf(h+'/')===0);if(a[i].classList.contains('wv2-here')!==on)a[i].classList.toggle('wv2-here',on);}}
+function start(){mark();new MutationObserver(mark).observe(document.getElementById('root'),{childList:true,subtree:true});window.addEventListener('popstate',mark);}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
+</script>
 </head>
 <body><div id="root"></div><script type="module" src="/main.js?v=20261124"></script></body>
 </html>
