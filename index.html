@@ -106,6 +106,12 @@ document.addEventListener('error', function (e) {
 /* v3: reading measure for map detail */
 .wv2-detail-x{max-width:520px}
 .wv2-detail-t,.wv2-detail-sub{max-width:520px}
+/* v4: calmer desktop scale, tighter opening */
+@media(min-width:900px){
+.wv2-h1{font-size:clamp(60px,6.4vw,92px);max-width:900px;line-height:1}
+.wv2-hero{padding:clamp(72px,12vh,128px) 0 clamp(56px,9vh,96px)}
+.wv2-letter>p.wv2-letter-open{margin-bottom:88px;text-wrap:balance}
+}
 </style>
 <script>
 (function(){
