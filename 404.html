@@ -112,12 +112,30 @@ document.addEventListener('error', function (e) {
 .wv2-hero{padding:clamp(72px,12vh,128px) 0 clamp(56px,9vh,96px)}
 .wv2-letter>p.wv2-letter-open{margin-bottom:88px;text-wrap:balance}
 }
+/* v5: image-led opening */
+body{overflow-x:clip}
+.wv2-portrait.wv2-hero-ph{opacity:1;max-width:none;object-fit:cover;object-position:50% 22%;filter:grayscale(1)}
+.wv2-photos:has(img.wv2-dup){display:none}
+@media(min-width:900px){
+.wv2-hero{position:relative;min-height:calc(100vh - 112px);padding:0 0 clamp(56px,9vh,96px);align-items:flex-end}
+.wv2-portrait.wv2-hero-ph{position:absolute;right:calc(50% - 50vw);top:24px;width:42vw;height:calc(100% - 24px)}
+.wv2-h1{position:relative;z-index:1;font-size:clamp(40px,4.3vw,62px);max-width:560px;line-height:1.02;letter-spacing:-.04em}
+}
+@media(max-width:899px){
+.wv2-hero{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:0;padding:24px 0 40px}
+.wv2-portrait.wv2-hero-ph{position:static;display:block;width:100%;height:min(60vh,520px);margin:0 0 36px;order:-1}
+.wv2-h1{font-size:clamp(34px,9.2vw,48px);line-height:1.02;letter-spacing:-.04em;max-width:none}
+}
+@media(max-width:700px){
+.wv2-portrait.wv2-hero-ph{width:100vw;max-width:none;margin:0 calc(50% - 50vw) 32px}
+}
 </style>
 <script>
 (function(){
 function mark(){var p=location.pathname.replace(/\/+$/,'')||'/';var a=document.querySelectorAll('.wv2-navlink');for(var i=0;i<a.length;i++){var h=(a[i].getAttribute('href')||'/').replace(/\/+$/,'')||'/';var on=h==='/'?p==='/':(p===h||p.indexOf(h+'/')===0);if(a[i].classList.contains('wv2-here')!==on)a[i].classList.toggle('wv2-here',on);}}
 function keep(){var e=document.querySelectorAll('.wv2-letter em');for(var i=0;i<e.length;i++){var k=i===e.length-1;if(e[i].classList.contains('wv2-keep')!==k)e[i].classList.toggle('wv2-keep',k);}}
-function start(){mark();keep();new MutationObserver(function(){mark();keep();}).observe(document.getElementById('root'),{childList:true,subtree:true});window.addEventListener('popstate',mark);}
+function hero(){var p=document.querySelector('.wv2-portrait');if(!p)return;var L=document.querySelectorAll('.wv2-photos img');var m=L.length?L[L.length-1]:null;if(!m||!m.src)return;if(p.getAttribute('data-ph')!==m.src){p.setAttribute('data-ph',m.src);p.src=m.src;p.removeAttribute('srcset');}if(!p.classList.contains('wv2-hero-ph'))p.classList.add('wv2-hero-ph');if(!m.classList.contains('wv2-dup'))m.classList.add('wv2-dup');}
+function start(){mark();keep();hero();new MutationObserver(function(){mark();keep();hero();}).observe(document.getElementById('root'),{childList:true,subtree:true});window.addEventListener('popstate',mark);}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();
 </script>
