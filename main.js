@@ -131,3 +131,42 @@ react-router-dom/dist/index.mjs:
 
 /* Full Story close: repeat Home manifesto + contact CTA at the end of /story */
 ;x9=function(e){let t=as[e.lang],[a,o]=Uh("bmseu"),i=t.nodes[a];return Bh(()=>{document.getElementById("wv2-map")?.scrollIntoView()},[]),Be("main",{children:[te("p",{className:"wv2-back",children:Be(Ei,{to:"/",className:"wv2-navlink",children:["\u2190 ",t.backHome]})}),Be("section",{className:"wv2-section",id:"wv2-map",children:[te(Jr,{children:t.pathLabel}),te("p",{className:"wv2-sub wv2-hint",children:t.pathHint}),Be("div",{className:"wv2-path",children:[te(V4,{lang:e.lang,selected:a,onSelect:o,ariaLabel:t.pathLabel}),Be("div",{className:"wv2-detail","aria-live":"polite",children:[te("h3",{className:"wv2-detail-t",children:k9(e.lang,a)}),te("p",{className:"wv2-detail-sub",children:i.sub}),te("p",{className:"wv2-detail-x",children:i.text}),i.linkLabel?te("p",{className:"wv2-rowlinks",children:te("a",{href:i.linkUrl,target:"_blank",rel:"noopener noreferrer",children:i.linkLabel})}):null]})]})]}),te("h1",{className:"wv2-h2",children:t.storyTitle}),Be("section",{className:"wv2-section",children:[te(Jr,{children:t.craftLabel}),te("p",{className:"wv2-sub",children:t.craftSub}),te(xo,{items:t.craft.map(s=>({...s,links:[]}))})]}),Be("section",{className:"wv2-section",children:[te(Jr,{children:t.builtLabel}),te("p",{className:"wv2-sub",children:t.builtSub}),te(xo,{items:t.built.map(s=>({...s,links:[]}))})]}),Be("section",{className:"wv2-section",children:[te(Jr,{children:t.researchLabel}),te("p",{className:"wv2-sub",children:t.researchSub}),te(xo,{items:t.research})]}),Be("section",{className:"wv2-section",children:[te(Jr,{children:t.hacksLabel}),te("p",{className:"wv2-sub",children:t.hacksSub}),te(xo,{items:t.hacks})]}),Be("section",{className:"wv2-section",children:[te(Jr,{children:t.circlesLabel}),te("p",{className:"wv2-sub",children:t.circlesSub}),te(xo,{items:t.circles})]}),Be("section",{className:"wv2-section",children:[te(Jr,{children:t.pressHealthLabel}),te("p",{className:"wv2-sub",children:t.pressHealthSub}),te(xo,{items:t.pressHealth})]}),Be("section",{className:"wv2-section",children:[te(Jr,{children:t.pressDesignLabel}),te("p",{className:"wv2-sub",children:t.pressDesignSub}),te(xo,{items:t.pressDesign})]}),Be("section",{className:"wv2-letter wv2-storyclose",children:[te("p",{className:"wv2-letter-p",dangerouslySetInnerHTML:{__html:t.letter[t.letter.length-2]}}),te("p",{className:"wv2-letter-p",dangerouslySetInnerHTML:{__html:t.letter[t.letter.length-1]}})]}),te(G4,{lang:e.lang})]})}
+
+
+
+/* Full Story: five-taxonomy accordion with progressive disclosure (25 Nov 2026) */
+;x9=function(e){let ql=new URLSearchParams(location.search).get("lang");if(ql==="es"||ql==="en")e={...e,lang:ql};let t=as[e.lang],en=e.lang==="en";
+Bh(()=>{document.getElementById("wv2-map")?.scrollIntoView()},[]);
+let wvAL=en?{med:"Medicine",des:"Design",soc:"Social Impact",tec:"Technology",pre:"Press",hint:"Tap a point on the map, or open a theme below.",socIntro:"Democratizing access to microeconomics, geopolitics and investment.",engT:"Biomedical Engineering in UPF Barcelona",engS:"Majors in Innovation and Medical Devices (HEC Paris, IESE)",bookS:"Book, Grupo Planeta, March 2026 \u00b7 National bestseller",ex:" \u00b7 Exited"}:{med:"Medicina",des:"Dise\u00f1o",soc:"Impacto Social",tec:"Tecnolog\u00eda",pre:"Prensa",hint:"Toca un punto del mapa o abre un tema debajo.",socIntro:"Democratizar el acceso a la microeconom\u00eda, la geopol\u00edtica y las inversiones.",engT:"Ingenier\u00eda Biom\u00e9dica en UPF Barcelona",engS:"Majors in Innovation and Medical Devices (HEC Paris, IESE)",bookS:"Libro, Grupo Planeta, marzo de 2026 \u00b7 Superventas nacional",ex:" \u00b7 Exit realizado"};
+let wvALk=l=>te("a",{href:l.url,target:"_blank",rel:"noopener noreferrer",children:l.label});
+let wvAE=(ti,su,x,links)=>Be("div",{className:"wv2-e",children:[te("p",{className:"wv2-e-t",children:ti}),su?te("p",{className:"wv2-e-s",children:su}):null,te("p",{className:"wv2-e-x",children:x}),links&&links.length?te("p",{className:"wv2-rowlinks",children:links.map(wvALk)}):null]});
+let wvAB=(id,label,inner)=>te("details",{className:"wv2-b",id:"wv2-b-"+id,children:[te("summary",{children:[te("span",{className:"wv2-b-t",children:label}),te("span",{className:"wv2-b-p",children:"+"})]}),te("div",{className:"wv2-b-x",children:inner})]});
+let wvAP=(ti,links)=>Be("div",{className:"wv2-e",children:[te("p",{className:"wv2-e-t",children:ti}),te("p",{className:"wv2-rowlinks",children:links.map(wvALk)})]});
+let wvAGo=a=>{let b={eng:"med",igem:"med",thesis:"med",roche:"med",bmses:"med",bmseu:"med",lescoins:"des",maskin:"soc"}[a]||"med",el=document.getElementById("wv2-b-"+b);if(el){el.open=true;setTimeout(()=>el.scrollIntoView({behavior:"smooth",block:"start"}),60)}};
+let med=[wvAE(wvAL.engT,wvAL.engS,t.nodes.eng.text),
+wvAE(k9(e.lang,"igem"),t.nodes.igem.sub,t.nodes.igem.text),
+wvAE(k9(e.lang,"thesis"),t.nodes.thesis.sub,t.nodes.thesis.text,[{label:t.nodes.thesis.linkLabel,url:t.nodes.thesis.linkUrl}]),
+wvAE(k9(e.lang,"roche"),t.nodes.roche.sub,t.nodes.roche.text),
+wvAE(k9(e.lang,"bmses"),t.nodes.bmses.sub,t.nodes.bmses.text),
+wvAE(k9(e.lang,"bmseu"),t.nodes.bmseu.sub,t.nodes.bmseu.text),
+Be("div",{className:"wv2-e",children:[te("p",{className:"wv2-e-t",children:t.craftLabel}),te("p",{className:"wv2-e-s",children:t.craftSub}),t.craft.map(c=>Be("p",{className:"wv2-e-x",children:[te("b",{children:c.t}),": "+c.d]}))]})];
+let des=[Be("div",{className:"wv2-e",children:[te("p",{className:"wv2-e-t",children:"LesCoins d'Art"+wvAL.ex}),te("p",{className:"wv2-e-s",children:t.nodes.lescoins.sub}),te("p",{className:"wv2-e-x",children:t.nodes.lescoins.text}),te("p",{className:"wv2-e-x",children:t.pressDesign[2].d})]})];
+let soc=[te("p",{className:"wv2-intro",children:wvAL.socIntro}),
+wvAE(k9(e.lang,"maskin")+wvAL.ex,t.nodes.maskin.sub,t.nodes.maskin.text,[t.pressHealth[1].links[1],t.pressHealth[1].links[2]]),
+wvAE("Finanzas Canallas",wvAL.bookS,t.pressDesign[1].d),
+Be("div",{className:"wv2-e",children:[te("p",{className:"wv2-e-t",children:t.circlesLabel}),te("p",{className:"wv2-e-s",children:t.circlesSub}),t.circles.map(c=>Be("p",{className:"wv2-e-x",children:[te("b",{children:c.t}),": "+c.d]}))]})];
+let tec=[wvAE("Thalamos"+wvAL.ex,null,t.built[2].d),
+Be("div",{className:"wv2-e",children:[te("p",{className:"wv2-e-t",children:t.hacksLabel}),te("p",{className:"wv2-e-s",children:t.hacksSub}),t.hacks.map(h=>Be("p",{className:"wv2-e-x",children:[te("b",{children:h.t}),": "+h.d]}))]})];
+let pre=[wvAP("iGEM",t.pressHealth[0].links),
+wvAP("MASKIN",[t.pressHealth[1].links[0]]),
+wvAP("LesCoins d'Art",t.pressDesign[0].links),
+wvAP("Finanzas Canallas",t.pressDesign[1].links),
+wvAP(t.hacksLabel,[t.hacks[0].links[0]].concat(t.pressDesign[3].links)),
+wvAP(t.circlesLabel,t.circles[0].links)];
+return Be("main",{children:[
+Be("section",{className:"wv2-section wv2-mapsec",id:"wv2-map",children:[
+te("p",{className:"wv2-sub wv2-hint2",children:wvAL.hint}),
+te("div",{className:"wv2-path",children:te(V4,{lang:e.lang,selected:null,onSelect:wvAGo,ariaLabel:t.pathLabel})})]}),
+te("div",{className:"wv2-acc",children:[wvAB("med",wvAL.med,med),wvAB("des",wvAL.des,des),wvAB("soc",wvAL.soc,soc),wvAB("tec",wvAL.tec,tec),wvAB("pre",wvAL.pre,pre)]}),
+Be("section",{className:"wv2-letter wv2-storyclose",children:[te("p",{className:"wv2-letter-p",dangerouslySetInnerHTML:{__html:t.letter[t.letter.length-2]}}),te("p",{className:"wv2-letter-p",dangerouslySetInnerHTML:{__html:t.letter[t.letter.length-1]}}),te("p",{className:"wv2-sign",children:t.sign})]}),
+te(G4,{lang:e.lang})]})};
