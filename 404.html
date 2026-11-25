@@ -112,21 +112,19 @@ document.addEventListener('error', function (e) {
 .wv2-hero{padding:clamp(72px,12vh,128px) 0 clamp(56px,9vh,96px)}
 .wv2-letter>p.wv2-letter-open{margin-bottom:88px;text-wrap:balance}
 }
-/* v7: gaze leads, mic returns to the letter as the second moment */
+/* v8: option 1, text leads, small B&W portrait */
 body{overflow-x:clip}
-.wv2-portrait.wv2-hero-ph{opacity:1;max-width:none;object-fit:cover;object-position:55% 15%;filter:grayscale(1)}
+.wv2-portrait.wv2-hero-ph{opacity:1;object-fit:cover;object-position:50% 20%;filter:grayscale(1) contrast(1.03);display:block}
 @media(min-width:900px){
-.wv2-hero{position:relative;min-height:min(calc(100vh - 112px),860px);padding:0 0 clamp(56px,9vh,96px);align-items:flex-end}
-.wv2-portrait.wv2-hero-ph{position:absolute;right:calc(50% - 50vw);top:24px;width:42vw;height:calc(100% - 24px)}
-.wv2-h1{position:relative;z-index:1;font-size:clamp(40px,4.3vw,62px);max-width:560px;line-height:1.02;letter-spacing:-.04em}
+.wv2-hero{display:flex;flex-direction:row;align-items:flex-end;justify-content:space-between;gap:80px;min-height:0;padding:clamp(96px,16vh,150px) 0 40px}
+.wv2-portrait.wv2-hero-ph{position:static;width:250px;height:312px;max-width:none;flex:0 0 auto;margin:0}
+.wv2-h1{position:static;font-size:clamp(52px,5.2vw,68px);max-width:640px;line-height:1.02;letter-spacing:-.04em}
+.wv2-letter>p.wv2-letter-open{margin-left:0;max-width:520px;font-size:21px;line-height:1.35;margin-bottom:88px;text-wrap:balance}
 }
 @media(max-width:899px){
-.wv2-hero{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:0;padding:24px 0 40px}
-.wv2-portrait.wv2-hero-ph{position:static;display:block;width:100%;height:min(60vh,520px);margin:0 0 36px;order:-1}
-.wv2-h1{font-size:clamp(34px,9.2vw,48px);line-height:1.02;letter-spacing:-.04em;max-width:none}
-}
-@media(max-width:700px){
-.wv2-portrait.wv2-hero-ph{width:100vw;max-width:none;margin:0 calc(50% - 50vw) 32px}
+.wv2-hero{display:flex;flex-direction:column;align-items:flex-start;gap:28px;min-height:0;padding:28px 0 28px}
+.wv2-portrait.wv2-hero-ph{position:static;order:-1;width:62%;max-width:260px;height:auto;aspect-ratio:4/5;margin:0}
+.wv2-h1{font-size:clamp(34px,9.6vw,44px);line-height:1.02;letter-spacing:-.04em;max-width:none}
 }
 </style>
 <script>
