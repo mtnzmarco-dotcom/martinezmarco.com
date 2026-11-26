@@ -158,6 +158,16 @@ body{overflow-x:clip}
 .wv2-root .wv2-hero .wv2-portrait{width:96px;height:auto;align-self:end;margin:0;justify-self:end}
 }
 @media(max-width:700px){.wv2-root .wv2-hero .wv2-standfirst{font-size:16px;line-height:1.5;margin-top:28px}}
+/* Home portrait: slightly larger, equal white space above and below */
+.wv2-root .wv2-hero .wv2-portrait{width:116px;margin:56px 0 16px}
+@media(min-width:900px){.wv2-root .wv2-hero{grid-template-columns:1fr 300px}.wv2-root .wv2-hero .wv2-portrait{width:300px;height:375px;top:0;margin:0 0 4px;object-fit:cover}}
+/* Full Story: return-to-diagram arrow in its own reserved bottom strip (never over text) */
+.wv2-up{position:fixed;left:0;right:0;bottom:0;height:52px;border:0;border-top:1px solid #efefef;background:#fff;display:flex;align-items:center;justify-content:flex-end;padding:0 8px 0 0;opacity:0;pointer-events:none;transition:opacity .25s;z-index:20;cursor:default}
+.wv2-up.on{opacity:1;pointer-events:auto}
+.wv2-up i{font-style:normal;width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:#2563eb;font:300 20px/1 Helvetica Neue,Helvetica,Arial,sans-serif;cursor:pointer}
+body.wv2-onstory{padding-bottom:52px}
+@media(min-width:900px){.wv2-up{padding-right:72px}}
+@media(min-width:721px) and (max-width:899px){.wv2-up{padding-right:max(8px,calc((100vw - 720px)/2 + 2px))}}
 /* Full Story: breathing room between the last accordion row and the closing paragraphs */
 .wv2-root .wv2-acc + .wv2-storyclose{margin-top:88px}
 @media(max-width:700px){.wv2-root .wv2-acc + .wv2-storyclose{margin-top:72px}}
@@ -186,6 +196,16 @@ body{overflow-x:clip}
 .wv2-root .wv2-e-x{color:#666}.wv2-root .wv2-e-x .wv2-hl{color:#111}
 .wv2-root .wv2-edu{display:block;margin:0 0 24px}.wv2-root .wv2-edu span{display:block}.wv2-root .wv2-edu-a{font-size:15px;line-height:1.5;color:#111}.wv2-root .wv2-edu-b{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#777;margin-top:6px}
 </style>
+<script>
+(function(){
+var up=null;
+function onStory(){return /^\/story/.test(location.pathname)}
+function mk(){if(up)return;up=document.createElement('button');up.className='wv2-up';up.type='button';up.innerHTML='<i>&uarr;</i>';up.setAttribute('aria-label','Back to the diagram');up.addEventListener('click',function(){var m=document.getElementById('wv2-map');if(m)m.scrollIntoView({behavior:'smooth',block:'start'});});document.body.appendChild(up);}
+function upd(){mk();var m=document.getElementById('wv2-map');var on=onStory()&&m&&m.getBoundingClientRect().bottom<0;up.classList.toggle('on',!!on);document.body.classList.toggle('wv2-onstory',onStory());}
+document.addEventListener('toggle',function(e){var d=e.target;if(!d||!d.classList||!d.classList.contains('wv2-b')||!d.open)return;var all=document.querySelectorAll('details.wv2-b'),closed=false;for(var i=0;i<all.length;i++){if(all[i]!==d&&all[i].open){all[i].open=false;closed=true;}}if(closed)setTimeout(function(){d.scrollIntoView({behavior:'smooth',block:'start'});},80);},true);
+window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);setInterval(upd,600);
+})();
+</script>
 <script>
 (function(){
 function mark(){var p=location.pathname.replace(/\/+$/,'')||'/';var a=document.querySelectorAll('.wv2-navlink');for(var i=0;i<a.length;i++){var h=(a[i].getAttribute('href')||'/').replace(/\/+$/,'')||'/';var on=h==='/'?p==='/':(p===h||p.indexOf(h+'/')===0);if(a[i].classList.contains('wv2-here')!==on)a[i].classList.toggle('wv2-here',on);}}
