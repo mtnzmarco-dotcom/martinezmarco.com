@@ -154,7 +154,7 @@ let des=[Be("div",{className:"wv2-e",children:[te("p",{className:"wv2-e-t",child
 let soc=[
 wvAE(k9(e.lang,"maskin")+wvAL.ex,t.nodes.maskin.sub,t.nodes.maskin.text,[t.pressHealth[1].links[1],t.pressHealth[1].links[2]]),
 wvAE("Finanzas Canallas",wvAL.bookS,[te("span",{className:"wv2-lead",children:wvAL.socIntro},"l"),t.pressDesign[1].d],null,Hh),
-Be("div",{className:"wv2-e",children:[te("p",{className:"wv2-e-t",children:t.circlesLabel}),te("p",{className:"wv2-e-s",children:t.circlesSub}),te("img",{className:"wv2-e-img",src:"/circle-glasses.jpg",alt:"",loading:"lazy",width:200,height:257}),t.circles.map(c=>Be("p",{className:"wv2-e-x",children:[te("b",{children:c.t}),": "+c.d]}))]})];
+Be("div",{className:"wv2-e",children:[te("p",{className:"wv2-e-t",children:t.circlesLabel}),te("p",{className:"wv2-e-s",children:t.circlesSub}),t.circles.map((c,i)=>Be("div",{className:"wv2-soc",style:{borderTop:"1px solid #e4e4e4",paddingTop:"22px",marginTop:i?"34px":"4px"},children:[te("p",{className:"wv2-e-t",style:{margin:"0 0 14px"},children:c.t}),i==0?te("img",{className:"wv2-e-img",src:"/circle-glasses.jpg",alt:"",loading:"lazy",width:200,height:257}):te("img",{className:"wv2-e-img",src:"/amcham-panel.jpg",alt:"",loading:"lazy",width:671,height:503,style:{width:"420px",maxWidth:"100%"}}),te("p",{className:"wv2-e-x",children:c.d})]}))]})];
 let tec=[wvAE("Thalamos"+wvAL.ex,null,t.built[2].d),
 Be("div",{className:"wv2-e",children:[te("p",{className:"wv2-e-t",children:t.hacksLabel}),te("p",{className:"wv2-e-s",children:t.hacksSub}),t.hacks.map(h=>Be("p",{className:"wv2-e-x",children:[te("b",{children:h.t}),": "+h.d]}))]})];
 let pre=[wvAP("iGEM",t.pressHealth[0].links),
