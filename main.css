@@ -149,6 +149,14 @@ details.wv2-b[open] .wv2-b-p{transform:rotate(45deg);color:#2563eb}
  .np-beyond .np-sub{margin-left:0}
  .np-d summary{grid-template-columns:1fr 32px;gap:6px 14px}.np-d summary>.np-tag{grid-row:1}.np-a{grid-column:1;grid-row:2}.np-b{grid-column:1;grid-row:3}.np-p{grid-column:2;grid-row:2}
 }
+.np-idx{margin:-60px 0 90px}
+.np-idx-h{margin:0 0 20px}
+.np-idx-g{columns:2;column-gap:60px;max-width:900px}
+.np-idx-g p{margin:0 0 11px;break-inside:avoid;font-size:15px;line-height:1.55}
+.np-idx-g a{color:#111;text-decoration:none;border:0}
+.np-idx-g a:hover{color:#2563EB}
+.np-idx-g .np-tag{margin-left:10px;font-size:10.5px;letter-spacing:.12em}
+@media(max-width:760px){.np-idx{margin:-20px 0 60px}.np-idx-g{columns:1}}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 
 .wv2-root:has(.np) .wv2-storyclose{margin-left:260px;max-width:620px}
