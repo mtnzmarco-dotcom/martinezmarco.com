@@ -207,7 +207,7 @@ body.wv2-onstory{padding-bottom:52px}
 (function(){
 var up=null;
 function onStory(){return /^\/story/.test(location.pathname)}
-function mk(){if(up)return;up=document.createElement('button');up.className='wv2-up';up.type='button';up.innerHTML='<i>&uarr;</i>';up.setAttribute('aria-label','Back to the diagram');up.addEventListener('click',function(){var m=document.getElementById('wv2-map');if(m)m.scrollIntoView({behavior:'smooth',block:'start'});});document.body.appendChild(up);}
+function mk(){if(up)return;up=document.createElement('button');up.className='wv2-up';up.type='button';up.innerHTML='<i>&uarr;</i>';up.setAttribute('aria-label','Back to top');up.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});document.body.appendChild(up);}
 function upd(){mk();var m=document.getElementById('wv2-map');var on=onStory()&&m&&m.getBoundingClientRect().bottom<0;up.classList.toggle('on',!!on);document.body.classList.toggle('wv2-onstory',onStory());}
 document.addEventListener('toggle',function(e){var d=e.target;if(!d||!d.classList||!d.classList.contains('wv2-b')||!d.open)return;var all=document.querySelectorAll('details.wv2-b'),closed=false;for(var i=0;i<all.length;i++){if(all[i]!==d&&all[i].open){all[i].open=false;closed=true;}}if(closed)setTimeout(function(){d.scrollIntoView({behavior:'smooth',block:'start'});},80);},true);
 window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);setInterval(upd,600);
