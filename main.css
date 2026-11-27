@@ -75,3 +75,4 @@ details.wv2-b[open] .wv2-b-p{transform:rotate(45deg);color:#2563eb}
 .rail a:focus-visible{outline:1.5px solid #2563eb;outline-offset:3px}
 @media (max-width:1100px){.rail{display:none}}
 @media (min-width:1101px){.prog{display:none}}
+.rail a .rl{max-width:calc(50vw - 378px);overflow:hidden;text-overflow:ellipsis}
