@@ -113,7 +113,7 @@ details.wv2-b[open] .wv2-b-p{transform:rotate(45deg);color:#2563eb}
 .np-g{display:grid;grid-template-columns:200px 1fr 1fr;gap:60px;align-items:start}
 .np-book .np-g{grid-template-columns:200px 1fr 360px}
 .np-book .np-img{margin-top:160px}
-.np-book .np-img img{width:360px;height:450px;object-fit:cover;filter:grayscale(1) contrast(1.06);display:block}
+.np-book .np-img img{width:360px;height:auto;filter:grayscale(1) contrast(1.06);display:block}
 .np-beyond h3{font-weight:400;font-size:24px;letter-spacing:-.02em;margin:0 0 8px;color:#111}
 .np-beyond p{font-size:16px}
 .np-beyond .np-sub{margin-top:40px;margin-left:260px}
@@ -121,13 +121,15 @@ details.wv2-b[open] .wv2-b-p{transform:rotate(45deg);color:#2563eb}
 .np-earlier{padding:30px 0 20px}
 .np-rows{border-bottom:1px solid #e3e3e3}
 .np-d{border-top:1px solid #e3e3e3}
-.np-d summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:200px 1fr 40px;gap:60px;align-items:baseline;padding:22px 0;min-height:56px}
+.np-d summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:200px 1fr 40px;gap:8px 60px;align-items:baseline;align-content:start;padding:22px 0}
 .np-d summary::-webkit-details-marker{display:none}
 .np-a{font-size:20px;letter-spacing:-.01em;color:#111}
 .np-b{color:#767676;font-size:15px}
 .np-p{color:#2563eb;font-size:22px;text-align:right;transition:transform .15s}
 .np-d[open] .np-p{transform:rotate(45deg)}
-.np-d[open]{background:#f7f7f5}
+.np-tag{color:#2563eb;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+.np-tag.np-tb{display:block;margin-top:7px}
+.np-d summary>.np-tag{display:block;grid-column:1/-1;margin:0 0 2px}
 .np-x{display:grid;grid-template-columns:200px 1fr;gap:60px;padding:0 0 30px}
 .np-x>div{max-width:620px}
 .np-x .wv2-e-x{font-size:16px;color:#333;line-height:1.6;margin:0 0 10px}
@@ -145,7 +147,7 @@ details.wv2-b[open] .wv2-b-p{transform:rotate(45deg);color:#2563eb}
  .np-big img{height:420px}.np-les h2,.np-book h2{font-size:36px}
  .np-book .np-img{margin-top:20px}.np-book .np-img img{width:100%;height:auto}
  .np-beyond .np-sub{margin-left:0}
- .np-d summary{grid-template-columns:1fr 32px;gap:6px 14px}.np-a{grid-column:1}.np-b{grid-column:1;grid-row:2}.np-p{grid-column:2;grid-row:1}
+ .np-d summary{grid-template-columns:1fr 32px;gap:6px 14px}.np-d summary>.np-tag{grid-row:1}.np-a{grid-column:1;grid-row:2}.np-b{grid-column:1;grid-row:3}.np-p{grid-column:2;grid-row:2}
 }
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 
